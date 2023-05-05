@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map and sets</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+​
+
+<body>
+    <h1>MAP AND SETS</h1>
+    <h3>
+        Q1. "Problem:
+        You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+        Your task is to remove all the duplicate occurrences of characters in the string.
+<br>
+        Input:
+        abcadeecfb
+<br>
+        Output:
+        abcdef"
+    </h3>
+    <h4>Ans.</h4>
+    <pre>
+        function removeDuplicates(str) {
+            let charSeen = {};
+            let result = "";
+          
+            for (let i = 0; i < str.length; i++) {
+              let char = str[i];
+              if (!charSeen[char]) {
+                charSeen[char] = true;
+                result += char;
+              }
+            }
+          
+            return result;
+          }
+          
+          // Example usage:
+          let str = "abcadeecfb";
+          let result = removeDuplicates(str);
+          console.log(result); // Output: "abcdef"
+          
+    </pre>
+    <h4>Explanation: <br>
+        In this code, we initialize an empty hash table charSeen to keep track of characters we have seen. We also
+        initialize an empty string result to store the unique characters.
+
+        We then iterate over the input string str using a for loop. For each character in str, we check if it has been
+        seen before by looking it up in the charSeen hash table. If the character has not been seen before, we add it to
+        the charSeen hash table and append it to the result string. If the character has already been seen, we skip it
+        and move on to the next character.
+
+        Finally, we return the result string, which contains only the unique characters from the input string.
+        <br>
+        <h3>
+            Q2. "Problem:
+            You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+<br>
+            Input:
+            abcadeecfb
+<br>
+            Output:
+            a=2
+            b=2
+            c=2
+            d=1
+            e=2
+            f=1"
+        </h3>
+        <h4>Ans.</h4>
+        <pre>
+        function countChars(str) {
+            let charCount = {};
+          
+            // Iterate over the string and update the character count
+            for (let i = 0; i < str.length; i++) {
+              let char = str[i];
+              if (!charCount[char]) {
+                charCount[char] = 1;
+              } else {
+                charCount[char]++;
+              }
+            }
+          
+            // Iterate over the character count and print the results
+            for (let char in charCount) {
+              console.log(`${char}=${charCount[char]}`);
+            }
+          }
+          
+          // Example usage:
+          let str = "abcadeecfb";
+          countChars(str);
+          // Output:
+          // a=2
+          // b=2
+          // c=2
+          // d=1
+          // e=2
+          // f=1
+          
+    </pre>
+        <h4>Explanation: <br>
+            In this code, we initialize an empty hash table charCount to store the count for each character. We then
+            iterate over the input string str using a for loop. For each character in str, we check if it is already in
+            the charCount hash table. If the character is not in the hash table, we add it with a count of 1. If the
+            character is already in the hash table, we increment the count for that character by 1.
+
+            Finally, we iterate over the charCount hash table using a for...in loop and print out the count for each
+            character.
+        </h4>
+</body>
+
+</html>
